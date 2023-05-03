@@ -27,6 +27,8 @@ struct HeartRateCalculatorView: View {
                     .font(.title)
                     .foregroundColor(.red)
                     .padding()
+                Divider()
+                    .padding()
                 
                 VStack(alignment: .leading) {
                     Text("Enter Your Age:")
