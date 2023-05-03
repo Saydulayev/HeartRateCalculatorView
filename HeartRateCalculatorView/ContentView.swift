@@ -59,6 +59,7 @@ struct HeartRateCalculatorView: View {
                         .frame(width: 200, height: 50)
                         .background(Color.red)
                         .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 3))
                 }
                 .padding(.top)
 
