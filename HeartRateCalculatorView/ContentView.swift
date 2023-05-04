@@ -88,6 +88,7 @@ struct HeartRateCalculatorView: View {
                         .foregroundColor(.green)
                 }
                 .padding()
+                Spacer()
             }
         }
     }
