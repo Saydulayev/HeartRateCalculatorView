@@ -12,6 +12,8 @@ struct HeartRateCalculatorView: View {
     @State private var mhr = ""
     @State private var thr = ""
     
+    @State private var colorScheme = Color.self
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.white, Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -68,11 +70,14 @@ struct HeartRateCalculatorView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 3))
                 }
                 .padding(.top, 25)
-
-                
                 Spacer()
                 
-                VStack(alignment: .leading) {
+                Text("Fat-burning zone:")
+                    .font(.headline)
+                    .shadow(color: Color.black, radius: 1)
+                    
+                
+                             VStack(alignment: .leading) {
                     Text("Maximum Heart Rate:")
                         .font(.headline)
                         .foregroundColor(.black)
@@ -86,12 +91,17 @@ struct HeartRateCalculatorView: View {
                     Text("Target Heart Rate for Fat Burning:")
                         .font(.headline)
                         .foregroundColor(.black)
+                        
                     
                     Text("\(thr)")
                         .font(.title2)
                         .bold()
                         .foregroundColor(.green)
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(.thinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
                 Spacer()
             }
