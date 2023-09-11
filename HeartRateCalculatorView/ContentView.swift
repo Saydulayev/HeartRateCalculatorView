@@ -14,13 +14,18 @@ struct HeartRateCalculatorView: View {
     
     var body: some View {
         ZStack {
-            Color.white
-                .ignoresSafeArea()
+            LinearGradient(gradient: Gradient(colors: [Color.white, Color.red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .edgesIgnoringSafeArea(.bottom)
             VStack {
-                Image("heart")
-                    .resizable()
-                    .frame(width: 200, height: 100)
-                    .padding()
+                HStack(spacing: 0) {
+                    Image(systemName: "waveform.path.ecg")
+                    Image(systemName: "waveform.path.ecg")
+                        
+                        
+                }
+                .font(.system(size: 70))
+                .foregroundColor(.red)
+                .padding(.vertical, 40)
                 
                 Text("Heart Rate Calculator")
                     .font(.title)
